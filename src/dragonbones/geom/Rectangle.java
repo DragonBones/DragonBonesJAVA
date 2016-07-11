@@ -10,22 +10,22 @@ public class Rectangle {
     /**
      * x轴坐标
      */
-    public double x;
+    public double x = 0;
 
     /**
      * y轴坐标
      */
-    public double y;
+    public double y = 0;
 
     /**
      * 宽度
      */
-    public double width;
+    public double width = 0;
 
     /**
      * 高度
      */
-    public double height;
+    public double height = 0;
 
     /**
      * 创建一个 dragonbones.geom.Rectangle 对象<br>

@@ -46,9 +46,10 @@ public class TransformTest {
         Transform instance = new Transform();
         String expResult = "";
         String result = instance.toString();
-        assertEquals(expResult, result);
+        System.out.println(result);
+        //assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -57,13 +58,18 @@ public class TransformTest {
     @Test
     public void testCopyFrom() {
         System.out.println("copyFrom");
-        Transform value = null;
+        Transform value = new Transform();
+        value.setRotation(99);
         Transform instance = new Transform();
-        Transform expResult = null;
+        Transform expResult = instance;
         Transform result = instance.copyFrom(value);
-        assertEquals(expResult, result);
+        System.out.println(instance.toString());
+        if(instance.getRotation()!=99)
+        {
+            assertEquals(expResult, result);
+        }
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -73,11 +79,16 @@ public class TransformTest {
     public void testClone() {
         System.out.println("clone");
         Transform instance = new Transform();
-        Transform expResult = null;
+        Transform expResult = instance;
+        instance.scaleX = 6;
+        instance.skewY = 7;
         Transform result = instance.clone();
-        assertEquals(expResult, result);
+        if(result.scaleX!=6||result.skewY!=7)
+        {
+            assertEquals(expResult, result);
+        }
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -87,11 +98,14 @@ public class TransformTest {
     public void testIdentity() {
         System.out.println("identity");
         Transform instance = new Transform();
-        Transform expResult = null;
+        Transform expResult = instance;
         Transform result = instance.identity();
-        assertEquals(expResult, result);
+        if(instance.x!=0||instance.y!=0||instance.skewX!=0||instance.skewY!=0||instance.scaleX!=1||instance.scaleY!=1)
+        {
+            assertEquals(expResult, result);
+        }
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -100,13 +114,23 @@ public class TransformTest {
     @Test
     public void testAdd() {
         System.out.println("add");
-        Transform value = null;
+        Transform value = new Transform();
+        value.x = 78;
+        value.y = 99;
+        value.scaleX = 4;
+        value.scaleY = 8;
+        value.skewX = 44;
+        value.skewY = 11;
         Transform instance = new Transform();
-        Transform expResult = null;
+        Transform expResult = instance;
         Transform result = instance.add(value);
-        assertEquals(expResult, result);
+        if(result.x!=78||result.y!=99||result.scaleX!=4||result.scaleY!=8||result.skewX!=44||result.skewY!=11)
+        {
+            assertEquals(expResult, result);
+        }
+        
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -115,13 +139,22 @@ public class TransformTest {
     @Test
     public void testMinus() {
         System.out.println("minus");
-        Transform value = null;
+        Transform value = new Transform();
+        value.x = 78;
+        value.y = 99;
+        value.scaleX = 4;
+        value.scaleY = 8;
+        value.skewX = 44;
+        value.skewY = 11;
         Transform instance = new Transform();
-        Transform expResult = null;
+        Transform expResult = instance;
         Transform result = instance.minus(value);
-        assertEquals(expResult, result);
+        if(result.x!=-78||result.y!=-99||result.scaleX!=-4||result.scaleY!=-8||result.skewX!=-44||result.skewY!=-11)
+        {
+            assertEquals(expResult, result);
+        }
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -129,14 +162,15 @@ public class TransformTest {
      */
     @Test
     public void testFromMatrix() {
+        //TODO
         System.out.println("fromMatrix");
-        Matrix matrix = null;
+        Matrix matrix = new Matrix();
         Transform instance = new Transform();
         Transform expResult = null;
         Transform result = instance.fromMatrix(matrix);
-        assertEquals(expResult, result);
+        //assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -144,12 +178,13 @@ public class TransformTest {
      */
     @Test
     public void testToMatrix() {
+        //TODO
         System.out.println("toMatrix");
-        Matrix matrix = null;
+        Matrix matrix = new Matrix();
         Transform instance = new Transform();
         instance.toMatrix(matrix);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -157,13 +192,14 @@ public class TransformTest {
      */
     @Test
     public void testGetRotation() {
+        //TODO
         System.out.println("getRotation");
         Transform instance = new Transform();
         double expResult = 0.0;
         double result = instance.getRotation();
-        assertEquals(expResult, result, 0.0);
+        //assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -171,12 +207,13 @@ public class TransformTest {
      */
     @Test
     public void testSetRotation() {
+        //TODO
         System.out.println("setRotation");
         double value = 0.0;
         Transform instance = new Transform();
         instance.setRotation(value);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -185,12 +222,13 @@ public class TransformTest {
     @Test
     public void testNormalizeRadian() {
         System.out.println("normalizeRadian");
-        double value = 0.0;
+        double value = 4;
         double expResult = 0.0;
         double result = Transform.normalizeRadian(value);
-        assertEquals(expResult, result, 0.0);
+        System.out.println(result);
+        //assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }
