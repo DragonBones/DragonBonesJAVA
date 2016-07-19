@@ -5,10 +5,27 @@
  */
 package dragonbones.model;
 
+
 /**
  *
  * @author mebius
  */
 public class FFDTimelineData {
     
+    @Override
+    public String toString()
+    {
+        return "[Class dragonBones.FFDTimelineData]";
+    }
+    
+    public int displayIndex = 0;
+    public SkinData skin ;
+    public SlotDisplayDataSet slot ;
+    
+    public FFDTimelineData()
+    {
+        
+    }
+    
+    //_onClear
 }
