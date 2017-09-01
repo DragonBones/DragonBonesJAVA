@@ -1,3 +1,5 @@
 # DragonBonesJAVA
 
-coming soon...
+```
+./gradlew check
+```
