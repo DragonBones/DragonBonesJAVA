@@ -1592,8 +1592,8 @@ public class ObjectDataParser extends DataParser {
         }
 
         // Texture format.
-        textureAtlasData.width = getFloat(rawData, ObjectDataParser.WIDTH, 0);
-        textureAtlasData.height = getFloat(rawData, ObjectDataParser.HEIGHT, 0);
+        textureAtlasData.width = getInt(rawData, ObjectDataParser.WIDTH, 0);
+        textureAtlasData.height = getInt(rawData, ObjectDataParser.HEIGHT, 0);
         textureAtlasData.name = getString(rawData, ObjectDataParser.NAME, "");
         textureAtlasData.imagePath = getString(rawData, ObjectDataParser.IMAGE_PATH, "");
 

@@ -37,7 +37,7 @@ public interface IArmatureProxy extends IEventDispatcher {
      * @version DragonBones 4.5
      * @see Armature
      */
-    Armature armature();
+    Armature getArmature();
 
     /**
      * @language zh_CN
@@ -45,5 +45,5 @@ public interface IArmatureProxy extends IEventDispatcher {
      * @version DragonBones 4.5
      * @see Animation
      */
-    Animation animation();
+    Animation getAnimation();
 }

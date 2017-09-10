@@ -2,4 +2,6 @@ rootProject.name = 'dragonbones'
 
 include(
         'dragonbones-core',
+        'dragonbones-libgdx',
+        'dragonbones-samples',
 )

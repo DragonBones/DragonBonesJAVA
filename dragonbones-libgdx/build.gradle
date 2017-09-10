@@ -1,0 +1,4 @@
+dependencies {
+    compile project(":dragonbones-core")
+    compile "com.badlogicgames.gdx:gdx:$gdxVersion"
+}

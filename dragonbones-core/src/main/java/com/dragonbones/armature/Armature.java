@@ -17,6 +17,7 @@ import com.dragonbones.util.ShortArray;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 骨架，是骨骼动画系统的核心，由显示容器、骨骼、插槽、动画、事件系统构成。
@@ -907,7 +908,7 @@ public class Armature extends BaseObject implements IAnimatable {
      * @see Armature#getEventDispatcher()
      * @deprecated 已废弃，请参考 @see
      */
-    public void addEventListener(EventStringType type, Function listener, Object target) {
+    public void addEventListener(EventStringType type, Consumer<Object> listener, Object target) {
         this._proxy.addEvent(type, listener, target);
     }
 
@@ -915,7 +916,7 @@ public class Armature extends BaseObject implements IAnimatable {
      * @see Armature#getEventDispatcher()
      * @deprecated 已废弃，请参考 @see
      */
-    public void removeEventListener(EventStringType type, Function listener, Object target) {
+    public void removeEventListener(EventStringType type, Consumer<Object> listener, Object target) {
         this._proxy.removeEvent(type, listener, target);
     }
 

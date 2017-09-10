@@ -25,11 +25,11 @@ public abstract class TextureAtlasData extends BaseObject {
     /**
      * @private
      */
-    public float width;
+    public int width;
     /**
      * @private
      */
-    public float height;
+    public int height;
     /**
      * 贴图集缩放系数。
      *

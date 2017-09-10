@@ -1,6 +1,6 @@
 package com.dragonbones.event;
 
-import com.dragonbones.util.Function;
+import java.util.function.Consumer;
 
 /**
  * 事件接口。
@@ -31,7 +31,7 @@ public interface IEventDispatcher {
      * @version DragonBones 4.5
      * @language zh_CN
      */
-    void addEvent(EventStringType type, Function listener, Object target);
+    void addEvent(EventStringType type, Consumer<Object> listener, Object target);
 
     /**
      * 移除事件。
@@ -41,5 +41,5 @@ public interface IEventDispatcher {
      * @version DragonBones 4.5
      * @language zh_CN
      */
-    void removeEvent(EventStringType type, Function listener, Object target);
+    void removeEvent(EventStringType type, Consumer<Object> listener, Object target);
 }
